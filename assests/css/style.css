@@ -1,0 +1,223 @@
+:root{
+    --primary-color:#333;
+    --secondary-color:black;
+    --teritary-color:rgb(238, 236, 236);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*header section of web page*/ 
+header{
+    position: sticky !important;
+    top: 0;
+    z-index: 1;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    background-color: var(--primary-color);
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0 5%;
+}
+.logo{
+   width: 5%;
+}
+.logo img{
+    width:100%;
+}
+.nav-links{
+    display: flex;
+    width:40%;
+    justify-content: space-around;
+    margin-bottom: 0;
+}
+.nav-links li a{
+    color: var(--teritary-color);
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links li{
+    list-style: none;
+}
+
+.burger{
+    display: none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: var(--teritary-color);
+    margin: 5px;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+/* hero image section*/
+.hero-section{
+    background: url("../images/hero-image.jpg") no-repeat center center/cover;
+    height: 500px;
+    background-position: fixed;
+}
+/*main content of the page*/
+.title, main{
+    padding: 0 10%;
+}
+.title h1{ 
+    font-size: 4vw;
+    text-align: center;
+    font-family: 'EB Garamond', serif;
+    font-weight: normal;
+}
+/*Heading for the sections*/
+.heading{
+    font-size: 3vw;
+    font-family: 'EB Garamond', serif;
+    padding: 20px 0;
+    font-weight: bold;
+}
+/*about me section*/
+#about-me p{
+    font-size: 1.5vw;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+#about-me button{
+    background-color: var(--primary-color);
+    color: var(--teritary-color);
+    padding: 4px;
+    font-size: 1.5vw;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+/*footer for the page*/
+footer{
+    background-color:var(--primary-color);
+    padding: 15px 30px;
+}
+footer p{
+    font-size: 1.1vw;
+    color:var(--teritary-color);
+    font-family: 'Tinos', serif;
+    text-align: center;
+}
+/*work button*/
+#work a{
+    text-decoration: none;
+}
+.work_btn{
+    background-color: var(--primary-color);
+    color: var(--teritary-color);
+    border-radius: 2px;
+    padding:10px;
+    cursor: pointer;
+}
+.content_text{
+    font-size: 1.5vw;
+    padding: 2px;
+    text-align: justify;
+    letter-spacing: 1px;
+}
+.link{
+    text-decoration: none;
+    padding:4px 0px;
+}
+.work_btn:hover{
+    background: var(--secondary-color);
+}
+/*for smaller displayss*/
+@media screen and (max-width:1400px){
+    .nav-links{
+        width: 50%;
+    }
+}
+@media screen and (max-width:1200px){
+    .nav-links{
+        width: 60%;
+    }
+    .hero-section{
+        height:350px;
+    }
+}
+@media screen and (max-width:1000px){
+    .nav-links{
+        width: 70%;
+    }
+    .logo{
+        width: 10%;
+    }
+    .hero-section{
+        height:300px;
+    }
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height:92vh;
+        top: 8vh;
+        background-color: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+    .hero-section{
+        height:235px;
+    }
+    .heading{
+        padding: 10px 0;
+    }
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.nav-active{
+    transform: translateX(0);
+}
+
+
+/*to transform the lines of the menu*/
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.logos{
+    display: flex;
+    justify-content: space-between; 
+
+}
+.logos a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 5vw;
+}
